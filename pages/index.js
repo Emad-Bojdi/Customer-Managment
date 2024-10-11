@@ -1,11 +1,12 @@
+import App from "./_app.js";
 
 
 
-
-export default function Home() {
+function Home() {
   return (
     <>
-      <h1>hello</h1>
     </>
   )
 }
+
+export default Home;
