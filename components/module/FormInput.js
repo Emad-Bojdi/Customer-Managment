@@ -6,7 +6,7 @@ const FormInput = ({name, label, type, value, onChange}) => {
         <label htmlFor={name}>
             {label}
         </label>
-        <input type={type} value={value} onChange={onChange}/>
+        <input id={name} name={name} type={type} value={value} onChange={onChange}/>
     </div>
   )
 }
