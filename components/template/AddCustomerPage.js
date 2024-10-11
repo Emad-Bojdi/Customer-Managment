@@ -38,8 +38,8 @@ const AddCustomerPage = () => {
       headers: {"Content-Type" : "application/json"}
     });
     const data = res.json();
-    console.log(data);
-    if (res.status === "success") router.push("/");
+    if (res.status === 201) router.push("/");
+    console.log(res.status)
   }
   return (
     <div className="customer-page">
