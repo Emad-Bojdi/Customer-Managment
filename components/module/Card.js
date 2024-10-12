@@ -1,7 +1,16 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Card = ({ customer }) => {
-    const deleteHandler = () => {}
+    const router = useRouter();
+    const deleteHandler = async () => {
+        const res = await fetch(`/api/delete/${customer._id}`, {
+            method: "DELETE",
+        });
+        const data = await res.json();
+        console.log(data.status)
+        if (data.status === "success") location.reload();
+    }
     return (
         <div className='card'>
             <div className='card__details'>
@@ -11,7 +20,7 @@ const Card = ({ customer }) => {
                 <p>{customer.email}</p>
             </div>
             <div className='card__buttons'>
-                <button onClick={deleteHandler()}>
+                <button onClick={deleteHandler}>
                     Delete
                 </button>
                 <Link href={`/edit/${customer._id}`}> Edit </Link>
