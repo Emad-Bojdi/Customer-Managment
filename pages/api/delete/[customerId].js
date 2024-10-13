@@ -23,6 +23,7 @@ export default async function handler(req, res) {
     }
     if (req.method === "PATCH"){
         const id = req.query.customerId;
+        const body = req.body
         try {
             const editedCustomer = await Customer.findById(id);
             res.status({status:200, message:""})
