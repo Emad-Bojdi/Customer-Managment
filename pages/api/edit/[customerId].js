@@ -5,7 +5,6 @@ import connectDB from "../../../utils/connectDB";
 async function handler(req, res) {
     try {
         await connectDB();
-
     } catch (err) {
         console.log(err);
         res.status(500).json({ status: "success", message: "Error in connecting to database" });

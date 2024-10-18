@@ -15,6 +15,7 @@ async function handler(req, res) {
         const id = req.query.customerId;
         try {
             const customer = await Customer.findById(id);
+            res.status(200).json({ status:"success" , message: "Data received successfully" , data:customer})
 
         } catch (error) {
             res.status(500).json({ status: "failed", message: "Error in retrieving data from database" })

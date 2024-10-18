@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Form from "../module/Form";
 import moment from "moment/moment";
+import { useState } from "react";
 
 
 const CustomerEditPage = ({data , id}) => {
@@ -19,7 +20,8 @@ const CustomerEditPage = ({data , id}) => {
         products: data.products || "",
         date: date,
     });
-    const saveHandler = async () => {
+    const editHandler = async () => {
+      console.log(id)
         const res = await fetch(`/api/edit/${id}`, {
             method: "PATCH",
             body: JSON.stringify({ data : form}),

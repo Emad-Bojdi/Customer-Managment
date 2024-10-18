@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import CustomerDetailsPage from "../../components/template/CustomerDetailsPage";
+import { useState,useEffect } from "react";
 
 
 const Index = () => {
